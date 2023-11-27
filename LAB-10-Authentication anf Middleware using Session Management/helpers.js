@@ -26,7 +26,21 @@ function validate_password(password){
     return password;
 }
 
+
+function chnage_code(random){
+    if(typeof password!= 'string') throw 'password is not valid';
+    password=password;
+    if(password.trim().length==0) throw 'password must not be empty string';
+    if(password.includes(' ')) throw 'password can not contain spaces';
+    if(password.length<6) throw 'password is too short!';
+    if(!re_for_numbers.test(password)) throw 'password does not contain any number in it';
+    if(!re_for_uppercase.test(password)) throw 'password does not contain uppercase letter';
+    if(!re_for_specialcharacter.test(password)) throw 'password does not contain special character';
+    return password;
+}
+
 module.exports = {
     validate_password,
-    validate_user
+    validate_user,
+    chnage_code
 };
